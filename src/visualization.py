@@ -93,3 +93,94 @@ def plot_ship_mode_region_heatmap(df):
     )
     fig.update_layout(height=400)
     return fig
+
+    import plotly.express as px
+import plotly.graph_objects as go
+
+
+# US state name to abbreviation map (needed for choropleth)
+STATE_ABBR = {
+    'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR',
+    'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE',
+    'District Of Columbia': 'DC', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI',
+    'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA',
+    'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME',
+    'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN',
+    'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE',
+    'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM',
+    'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH',
+    'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI',
+    'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX',
+    'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA',
+    'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'
+}
+
+
+def plot_us_choropleth(state_perf, metric='Avg_Lead_Time'):
+    """Choropleth map of US states colored by chosen metric."""
+    df = state_perf.copy()
+    df['State_Abbr'] = df['State/Province'].map(STATE_ABBR)
+    df = df.dropna(subset=['State_Abbr'])
+
+    fig = px.choropleth(
+        df, locations='State_Abbr', locationmode='USA-states',
+        color=metric, scope='usa',
+        color_continuous_scale='RdYlGn_r' if metric == 'Avg_Lead_Time' else 'Blues',
+        hover_name='State/Province',
+        hover_data=['Volume', 'Avg_Lead_Time', 'Total_Sales'],
+        title=f'US Map: {metric.replace("_", " ")} by State'
+    )
+    fig.update_layout(height=550)
+    return fig
+
+
+def plot_route_network_map(df, top_n=20):
+    """Map showing factory → top N customer state routes as lines."""
+    # Top N routes by volume
+    route_volume = df.groupby('Route_State').size().reset_index(name='Volume').nlargest(top_n, 'Volume')
+    routes_to_plot = df[df['Route_State'].isin(route_volume['Route_State'])]
+    
+    # Aggregate per route to get one line per route
+    route_summary = routes_to_plot.groupby(
+        ['Factory', 'State/Province', 'Factory Latitude', 'Factory Longitude',
+         'Customer Latitude', 'Customer Longitude']
+    ).agg(
+        Volume=('Order ID', 'count'),
+        Avg_Lead_Time=('Shipping Lead Time', 'mean')
+    ).reset_index()
+
+    fig = go.Figure()
+
+    # Plot route lines
+    for _, row in route_summary.iterrows():
+        fig.add_trace(go.Scattergeo(
+            locationmode='USA-states',
+            lon=[row['Factory Longitude'], row['Customer Longitude']],
+            lat=[row['Factory Latitude'], row['Customer Latitude']],
+            mode='lines',
+            line=dict(width=max(1, row['Volume'] / 50), color='rgba(31, 119, 180, 0.5)'),
+            opacity=0.6,
+            hoverinfo='text',
+            text=f"{row['Factory']} → {row['State/Province']}<br>Volume: {row['Volume']}<br>Avg LT: {row['Avg_Lead_Time']:.1f}d",
+            showlegend=False
+        ))
+
+    # Plot factory markers
+    factories = route_summary[['Factory', 'Factory Latitude', 'Factory Longitude']].drop_duplicates()
+    fig.add_trace(go.Scattergeo(
+        locationmode='USA-states',
+        lon=factories['Factory Longitude'],
+        lat=factories['Factory Latitude'],
+        mode='markers+text',
+        marker=dict(size=14, color='red', symbol='star'),
+        text=factories['Factory'],
+        textposition='top center',
+        name='Factories'
+    ))
+
+    fig.update_layout(
+        title=f'Top {top_n} Shipping Routes by Volume',
+        geo=dict(scope='usa', projection_type='albers usa', showland=True, landcolor='rgb(243,243,243)'),
+        height=600
+    )
+    return fig
