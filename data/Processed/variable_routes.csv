@@ -1,0 +1,11 @@
+Route_State,Avg_Lead_Time,Median_Lead_Time,Lead_Time_Std,Route_Volume,Total_Sales,Total_Units,Total_Gross_Profit,Avg_Profit_Margin,Delay_Frequency_%,Route_Efficiency_Score
+Secret Factory → Illinois,1328.69,1635.0,360.03,13,546.25,47,273.65,50.92,100.0,42.57
+Wicked Choccy's → Louisiana,1272.27,1272.0,337.93,15,220.5,64,143.54,65.08,100.0,50.24
+The Other Factory → New York,1351.93,1456.5,326.82,14,181.75,54,29.75,12.7,100.0,39.41
+Secret Factory → Texas,1227.06,1271.5,323.91,16,517.5,63,268.7,53.25,100.0,56.38
+Wicked Choccy's → Quebec,1243.58,1274.0,322.09,24,254.75,77,165.53,64.99,100.0,54.13
+Secret Factory → Ohio,1301.23,1275.0,314.93,13,768.75,60,384.95,50.92,100.0,46.3
+Wicked Choccy's → Minnesota,1330.69,1275.0,310.76,45,595.25,169,387.87,65.13,100.0,42.3
+Lot's O' Nuts → British Columbia,1273.78,1274.0,307.08,18,253.4,71,173.8,68.02,100.0,50.03
+Wicked Choccy's → Arkansas,1273.52,1272.0,303.38,27,393.5,112,256.38,65.12,100.0,50.07
+Lot's O' Nuts → Rhode Island,1296.9,1273.0,301.98,30,353.76,99,242.86,68.93,100.0,46.89

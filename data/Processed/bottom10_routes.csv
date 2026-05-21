@@ -1,0 +1,11 @@
+Route_State,Avg_Lead_Time,Median_Lead_Time,Lead_Time_Std,Route_Volume,Total_Sales,Total_Units,Total_Gross_Profit,Avg_Profit_Margin,Delay_Frequency_%,Route_Efficiency_Score
+Wicked Choccy's → New Mexico,1488.88,1639.0,226.43,17,229.5,68,149.26,65.04,100.0,20.8
+Lot's O' Nuts → Iowa,1479.0,1636.0,187.51,16,227.87,64,157.47,69.17,100.0,22.15
+Secret Factory → Washington,1472.36,1637.0,190.5,11,351.25,26,175.85,50.91,100.0,23.05
+Lot's O' Nuts → New Mexico,1456.94,1639.0,258.26,18,260.71,73,179.41,69.31,100.0,25.14
+Wicked Choccy's → Manitoba,1455.6,1455.0,192.9,10,120.25,35,78.27,65.0,100.0,25.33
+Lot's O' Nuts → Connecticut,1420.55,1635.0,249.39,47,523.59,147,362.29,69.17,100.0,30.09
+Wicked Choccy's → Iowa,1403.79,1456.0,272.0,14,172.5,48,112.5,65.15,100.0,32.37
+Wicked Choccy's → Indiana,1402.46,1275.5,257.77,54,708.25,203,461.31,65.12,100.0,32.55
+Wicked Choccy's → Tennessee,1393.76,1276.0,241.36,67,915.75,265,596.21,65.09,100.0,33.73
+Lot's O' Nuts → Tennessee,1390.96,1276.0,257.72,109,1361.56,382,941.76,69.22,100.0,34.11

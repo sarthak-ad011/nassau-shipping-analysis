@@ -1,0 +1,11 @@
+Route_State,Avg_Lead_Time,Median_Lead_Time,Lead_Time_Std,Route_Volume,Total_Sales,Total_Units,Total_Gross_Profit,Avg_Profit_Margin,Delay_Frequency_%,Route_Efficiency_Score
+Wicked Choccy's → Nevada,1182.25,1271.5,226.37,12,151.5,42,98.82,65.19,100.0,62.47
+Secret Factory → Texas,1227.06,1271.5,323.91,16,517.5,63,268.7,53.25,100.0,56.38
+Lot's O' Nuts → Virginia,1229.49,1273.0,262.01,109,1538.84,431,1059.24,68.85,100.0,56.05
+Wicked Choccy's → South Carolina,1234.21,1273.0,240.9,19,307.0,86,200.16,65.2,100.0,55.41
+Lot's O' Nuts → Utah,1236.0,1275.0,298.22,29,393.91,110,270.11,68.69,100.0,55.16
+Wicked Choccy's → Virginia,1238.88,1273.0,254.77,106,1490.0,430,970.2,65.1,100.0,54.77
+Wicked Choccy's → Mississippi,1240.45,1274.0,222.89,22,315.75,91,205.61,65.11,100.0,54.56
+Lot's O' Nuts → Nevada,1243.25,1273.0,239.22,24,389.21000000000004,109,268.11,68.88,100.0,54.18
+Wicked Choccy's → Quebec,1243.58,1274.0,322.09,24,254.75,77,165.53,64.99,100.0,54.13
+Lot's O' Nuts → Oregon,1245.19,1273.0,269.88,77,1085.9,305,751.6,69.4,100.0,53.91
