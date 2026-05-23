@@ -54,7 +54,7 @@ def plot_lead_time_trend(df):
     """Monthly trend of avg lead time."""
     df = df.copy()
     df['Order Date'] = pd.to_datetime(df['Order Date'])
-    monthly = df.groupby(pd.Grouper(key='Order Date', freq='M'))['Shipping Lead Time'].mean().reset_index()
+    monthly = df.groupby(pd.Grouper(key='Order Date', freq='ME'))['Shipping Lead Time'].mean().reset_index()
     fig = px.line(
         monthly, x='Order Date', y='Shipping Lead Time',
         title='Monthly Average Lead Time Trend',
@@ -93,9 +93,6 @@ def plot_ship_mode_region_heatmap(df):
     )
     fig.update_layout(height=400)
     return fig
-
-    import plotly.express as px
-import plotly.graph_objects as go
 
 
 # US state name to abbreviation map (needed for choropleth)
@@ -136,6 +133,15 @@ def plot_us_choropleth(state_perf, metric='Avg_Lead_Time'):
 
 def plot_route_network_map(df, top_n=20):
     """Map showing factory → top N customer state routes as lines."""
+    df = df.copy()
+
+    # Add customer coordinates if missing
+    if 'Customer Latitude' not in df.columns or 'Customer Longitude' not in df.columns:
+        from data_loader import US_STATE_COORDS
+        df['Customer Latitude'] = df['State/Province'].map(lambda s: US_STATE_COORDS.get(s, (None, None))[0])
+        df['Customer Longitude'] = df['State/Province'].map(lambda s: US_STATE_COORDS.get(s, (None, None))[1])
+        df = df.dropna(subset=['Customer Latitude', 'Customer Longitude'])
+
     # Top N routes by volume
     route_volume = df.groupby('Route_State').size().reset_index(name='Volume').nlargest(top_n, 'Volume')
     routes_to_plot = df[df['Route_State'].isin(route_volume['Route_State'])]
@@ -148,6 +154,7 @@ def plot_route_network_map(df, top_n=20):
         Volume=('Order ID', 'count'),
         Avg_Lead_Time=('Shipping Lead Time', 'mean')
     ).reset_index()
+
 
     fig = go.Figure()
 
