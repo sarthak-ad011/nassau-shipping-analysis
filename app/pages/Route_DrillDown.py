@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title='Route Drill-Down', layout='wide')
 st.title('🔎 Route Drill-Down')
 
 if 'filtered_df' not in st.session_state:

@@ -6,7 +6,6 @@ from visualization import (plot_route_efficiency_leaderboard,
                            plot_factory_performance, plot_lead_time_trend)
 from kpi_calculator import compute_route_kpis
 
-st.set_page_config(page_title='Route Overview', layout='wide')
 st.title('🛣️ Route Performance Overview')
 
 if 'filtered_df' not in st.session_state:
