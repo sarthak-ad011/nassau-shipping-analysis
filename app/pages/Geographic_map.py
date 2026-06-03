@@ -4,7 +4,6 @@ import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 from visualization import plot_us_choropleth, plot_route_network_map, plot_volume_vs_leadtime
 
-st.set_page_config(page_title='Geographic Map', layout='wide')
 st.title('🗺️ Geographic Shipping Analysis')
 
 if 'filtered_df' not in st.session_state:

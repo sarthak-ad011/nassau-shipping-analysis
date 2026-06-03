@@ -181,15 +181,13 @@ maxUploadSize = 200
  
 ## 💡 Results & Insights
  
-> Replace the placeholders below with your actual computed numbers from the analysis.
- 
-- **Lead time:** Median X days; Same Day class is ~Y% faster than Standard Class
-- **Most efficient routes:** [Top 3 routes with metrics]
-- **Critical bottlenecks:** [N] states account for [X]% of volume but [Y]% of all delays
-- **Geographic gap:** Sugar Shack (Minnesota) shows the longest reach into the Pacific region
+- **Lead time:** Median 1,274 days; Same Day class is ~0.4% faster than Standard Class
+- **Most efficient routes:** (1) Wicked Choccy's → Nevada (Avg LT: 1,182 days, Efficiency: 62.47), (2) Secret Factory → Texas (Avg LT: 1,227 days, Efficiency: 56.38), (3) Lot's O' Nuts → Virginia (Avg LT: 1,229 days, Efficiency: 56.05)
+- **Critical bottlenecks:** 2 states (Tennessee, Washington) account for 6.8% of volume but 6.8% of all delays
+- **Geographic gap:** Sugar Shack (Minnesota) shows the longest reach into the Pacific region with only 3 Pacific orders out of 33 total, while Lot's O' Nuts handles 1,813 Pacific orders
 ### Recommendations
 1. Open a Pacific-region distribution hub to reduce Sugar Shack → CA/OR/WA lead times
-2. Apply a ship-mode upgrade policy for high-value orders to bottleneck states
+2. Apply a ship-mode upgrade policy for high-value orders to bottleneck states (Tennessee, Washington)
 3. Audit carriers on the 5 worst-performing routes
 4. Pre-position Q4 inventory in high-volume states
 ---

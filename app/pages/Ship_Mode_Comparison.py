@@ -4,7 +4,6 @@ import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 from visualization import plot_lead_time_by_ship_mode, plot_ship_mode_region_heatmap
 
-st.set_page_config(page_title='Ship Mode Comparison', layout='wide')
 st.title('🚚 Ship Mode Performance')
 
 if 'filtered_df' not in st.session_state:

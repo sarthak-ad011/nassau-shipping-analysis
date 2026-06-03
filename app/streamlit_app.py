@@ -42,7 +42,6 @@ selected_regions = st.sidebar.multiselect('Region', all_regions, default=all_reg
 # Ship Mode
 all_modes = sorted(df['Ship Mode'].unique())
 selected_modes = st.sidebar.multiselect('Ship Mode', all_modes, default=all_modes)
-
 # Lead-time threshold for delay
 delay_threshold = st.sidebar.slider('Delay threshold (days)', 1, 30, 7)
 
