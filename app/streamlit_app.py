@@ -70,6 +70,8 @@ st.markdown("""
 <style>
     footer {visibility: hidden;}
     header {visibility: hidden;}
+    /* Capitalize sidebar navigation labels (e.g. "streamlit app" → "Streamlit App") */
+    [data-testid="stSidebarNav"] span {text-transform: capitalize;}
 </style>
 """, unsafe_allow_html=True)
 
