@@ -20,8 +20,8 @@ authors:
     family-names: "Anand"
     email: "sarthakanand1409@gmail.com"
     affiliation: "Department of Electronics and Communication Engineering, Birla Institute of Technology, Mesra"
-repository-code: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
-url: "https://YOUR-APP-URL.streamlit.app"
+repository-code: "https://github.com/sarthak-ad011/nassau-shipping-analysis"
+url: "https://nassaushippinganalysis.streamlit.app/"
 version: "1.0.0"
 date-released: "2026-06-24"
 license: MIT
@@ -39,7 +39,7 @@ keywords:
   - plotly
 identifiers:
   - type: url
-    value: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
+    value: "https://github.com/sarthak-ad011/nassau-shipping-analysis"
     description: "GitHub repository for the project source code"
 preferred-citation:
   type: article
@@ -51,7 +51,7 @@ preferred-citation:
       affiliation: "Department of Electronics and Communication Engineering, Birla Institute of Technology, Mesra"
   year: 2026
   month: 6
-  url: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
+  url: "https://github.com/sarthak-ad011/nassau-shipping-analysis"
   abstract: >-
     This work presents a route-level efficiency analysis of factory-to-customer
     shipping operations for Nassau Candy Distributor. Using 10,194 shipment
