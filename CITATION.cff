@@ -1,0 +1,91 @@
+# This CITATION.cff file was generated for academic and research citation purposes.
+# Learn more: https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+message: "If you use this project or its findings in your research, please cite it as below."
+title: "Factory-to-Customer Shipping Route Efficiency Analysis for Nassau Candy Distributor"
+abstract: >-
+  A data-driven analysis of factory-to-customer shipping routes for Nassau Candy
+  Distributor, transforming 10,194 raw order and shipment records into route-level
+  operational intelligence. The project computes seven route-level Key Performance
+  Indicators (KPIs) including Average Lead Time, Delay Frequency, and Route
+  Efficiency Score; performs geographic bottleneck detection across U.S. states;
+  compares ship mode performance; and delivers an interactive Streamlit dashboard,
+  a research paper, and an executive summary. The analytical pipeline is
+  reproducible and includes data cleaning, feature engineering, route aggregation,
+  efficiency benchmarking, and visualization modules.
+type: software
+authors:
+  - given-names: "Sarthak"
+    family-names: "Anand"
+    email: "sarthakanand1409@gmail.com"
+    affiliation: "Department of Electronics and Communication Engineering, Birla Institute of Technology, Mesra"
+repository-code: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
+url: "https://YOUR-APP-URL.streamlit.app"
+version: "1.0.0"
+date-released: "2026-06-24"
+license: MIT
+keywords:
+  - logistics-analytics
+  - supply-chain
+  - shipping-route-efficiency
+  - exploratory-data-analysis
+  - geographic-bottleneck-analysis
+  - streamlit-dashboard
+  - kpi-analysis
+  - data-visualization
+  - python
+  - pandas
+  - plotly
+identifiers:
+  - type: url
+    value: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
+    description: "GitHub repository for the project source code"
+preferred-citation:
+  type: article
+  title: "Factory-to-Customer Shipping Route Efficiency Analysis for Nassau Candy Distributor"
+  authors:
+    - given-names: "Sarthak"
+      family-names: "Anand"
+      email: "sarthakanand1409@gmail.com"
+      affiliation: "Department of Electronics and Communication Engineering, Birla Institute of Technology, Mesra"
+  year: 2026
+  month: 6
+  url: "https://github.com/YOUR_USERNAME/nassau-shipping-analysis"
+  abstract: >-
+    This work presents a route-level efficiency analysis of factory-to-customer
+    shipping operations for Nassau Candy Distributor. Using 10,194 shipment
+    records spanning five factories and over fifty U.S. states, the study
+    defines seven Key Performance Indicators, applies geographic bottleneck
+    detection, and evaluates ship mode performance trade-offs. The pipeline
+    is delivered as an interactive Streamlit dashboard alongside a reproducible
+    data processing codebase, providing a data-driven foundation for logistics
+    decision-making.
+references:
+  - type: software
+    title: "pandas: Python Data Analysis Library"
+    authors:
+      - name: "The pandas development team"
+    version: "2.2.0"
+    url: "https://pandas.pydata.org/"
+  - type: software
+    title: "Plotly Python Open Source Graphing Library"
+    authors:
+      - name: "Plotly Technologies Inc."
+    version: "5.18.0"
+    url: "https://plotly.com/python/"
+  - type: software
+    title: "Streamlit: A faster way to build and share data apps"
+    authors:
+      - name: "Streamlit Inc."
+    version: "1.31.0"
+    url: "https://streamlit.io/"
+  - type: software
+    title: "scikit-learn: Machine Learning in Python"
+    authors:
+      - name: "Pedregosa, F."
+      - name: "Varoquaux, G."
+      - name: "Gramfort, A."
+      - name: "et al."
+    version: "1.4.0"
+    url: "https://scikit-learn.org/"
